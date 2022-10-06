@@ -4,7 +4,7 @@ Just a simple demo of Nixifying a *multi-package* Haskell project.
 
 ## Packages
 
-This project as two local Haskell packages:
+This project has two local Haskell packages:
 
 1. `foo`: a Haskell library exporting `Foo.fooFunc`.
 2. `bar`: a Haskell executable that depends on `foo`
