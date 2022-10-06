@@ -12,12 +12,14 @@
           overlay = self: super: {
             # Local packages in the repository
             foo = self.callCabal2nix "foo" ./foo {};
+            bar = self.callCabal2nix "bar" ./bar {};
             # TODO: Put any package overrides here
           };
           # Extend the `pkgs.haskellPackages` attrset using an overlay.
           haskellPackages' = pkgs.haskellPackages.extend overlay;
         in {
           packages.foo = haskellPackages'.foo;
+          packages.default = haskellPackages'.bar;
         };
     };
 }

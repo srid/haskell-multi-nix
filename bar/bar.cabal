@@ -1,0 +1,22 @@
+cabal-version:   3.0
+name:            bar
+version:         0.1.0.0
+license:         MIT
+license-file:    LICENSE
+author:          Sridhar Ratnakumar
+maintainer:      srid@srid.ca
+category:        Other
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+executable bar
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.15.1.0
+      , foo
+    hs-source-dirs:   src
+    default-language: Haskell2010
