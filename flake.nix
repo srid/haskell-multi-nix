@@ -13,7 +13,7 @@
             # Local packages in the repository
             foo = self.callCabal2nix "foo" ./foo {};
             bar = self.callCabal2nix "bar" ./bar {};
-            # TODO: Put any package overrides here
+            # TODO: Put any library dependency overrides here
           };
           # Extend the `pkgs.haskellPackages` attrset using an overlay.
           #
