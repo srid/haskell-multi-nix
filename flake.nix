@@ -23,8 +23,10 @@
           # merge the overlays.
           haskellPackages' = pkgs.haskellPackages.extend overlay;
         in {
-          packages.foo = haskellPackages'.foo;
-          packages.default = haskellPackages'.bar;
+          packages = {
+            inherit (haskellPackages') foo bar;
+            default = haskellPackages'.bar;
+          };
           # This is how we provide a multi-package dev shell in Haskell.
           # By using the `shellFor` function.
           devShells.default = haskellPackages'.shellFor {
