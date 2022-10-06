@@ -9,9 +9,13 @@
       systems = nixpkgs.lib.systems.flakeExposed;
       perSystem = {self', inputs', pkgs, system, ... }:
         let
-          haskellPackages' = pkgs.haskellPackages.extend (self: super: {
+          overlay = self: super: {
+            # Local packages in the repository
             foo = self.callCabal2nix "foo" ./foo {};
-          });
+            # TODO: Put any package overrides here
+          };
+          # Extend the `pkgs.haskellPackages` attrset using an overlay.
+          haskellPackages' = pkgs.haskellPackages.extend overlay;
         in {
           packages.foo = haskellPackages'.foo;
         };
