@@ -16,10 +16,26 @@
             # TODO: Put any package overrides here
           };
           # Extend the `pkgs.haskellPackages` attrset using an overlay.
+          #
+          # Note that we can also extend the package set using more than one
+          # overlay. To do that we can either chain the `extend` calls or use
+          # the `composeExtensions` (or `composeManyExtensions`) function to
+          # merge the overlays.
           haskellPackages' = pkgs.haskellPackages.extend overlay;
         in {
           packages.foo = haskellPackages'.foo;
           packages.default = haskellPackages'.bar;
+          # This is how we provide a multi-package dev shell in Haskell.
+          # By using the `shellFor` function.
+          devShells.default = haskellPackages'.shellFor {
+            packages = p: [
+              p.foo
+              p.bar
+            ];
+            buildInputs = [
+              haskellPackages'.ghcid
+            ];
+          };
         };
     };
 }
