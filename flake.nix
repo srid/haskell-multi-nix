@@ -8,8 +8,12 @@
     flake-parts.lib.mkFlake { inherit self; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       perSystem = {self', inputs', pkgs, system, ... }:
-        {
-          packages.foo = pkgs.haskellPackages.aeson;
+        let
+          haskellPackages' = pkgs.haskellPackages.extend (self: super: {
+            foo = self.callCabal2nix "foo" ./foo {};
+          });
+        in {
+          packages.foo = haskellPackages'.foo;
         };
     };
 }
