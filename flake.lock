@@ -2,16 +2,14 @@
   "nodes": {
     "flake-parts": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1664385320,
-        "narHash": "sha256-uSCHb9RUqHRjTpI8OzyaUuHckFnnxwZqlXEuo+yUpYQ=",
+        "lastModified": 1666885127,
+        "narHash": "sha256-uXA/3lhLhwOTBMn9a5zJODKqaRT+SuL5cpEmOz2ULoo=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "45298bd207b26e1bcd030a0bb075aa2da29f8e30",
+        "rev": "0e101dbae756d35a376a5e1faea532608e4a4b9a",
         "type": "github"
       },
       "original": {
@@ -20,13 +18,29 @@
         "type": "github"
       }
     },
+    "haskell-flake": {
+      "locked": {
+        "lastModified": 1667145982,
+        "narHash": "sha256-f9DGO5yZLivyJT6DmLB7hqoCFBprhL6kWXwJ3Ea1y9E=",
+        "owner": "HariAmoor-professional",
+        "repo": "haskell-flake",
+        "rev": "9e43811a915e237d1f09502f2b276f2a96f2922b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "HariAmoor-professional",
+        "ref": "issue-7",
+        "repo": "haskell-flake",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1664904529,
-        "narHash": "sha256-mGlB/SQR4E9jb7fOOxCTJlwL6Mk1Dpyvi4UrOXL6C18=",
+        "lastModified": 1667055375,
+        "narHash": "sha256-xfSTHYxuKRiqF4dcuAFdti1OUvrC2lHpQqCHWUK5/JA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b7a47253e0c8cb04c0a3f8ed3149e90229e62884",
+        "rev": "7f9be6a505a31f88499c5d20d11f98accf5ae6ba",
         "type": "github"
       },
       "original": {
@@ -36,9 +50,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-lib": {
+      "locked": {
+        "dir": "lib",
+        "lastModified": 1665349835,
+        "narHash": "sha256-UK4urM3iN80UXQ7EaOappDzcisYIuEURFRoGQ/yPkug=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "34c5293a71ffdb2fe054eb5288adc1882c1eb0b1",
+        "type": "github"
+      },
+      "original": {
+        "dir": "lib",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "haskell-flake": "haskell-flake",
         "nixpkgs": "nixpkgs"
       }
     }
