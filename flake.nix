@@ -3,7 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-parts.inputs.nixpkgs.follows = "nixpkgs";
-    haskell-flake.url = "github:HariAmoor-professional/haskell-flake/issue-7";
+    haskell-flake.url = "path:/home/hariamoor/platonic-systems/haskell-flake";
   };
   outputs = { self, nixpkgs, flake-parts, haskell-flake }:
     flake-parts.lib.mkFlake { inherit self; } {
@@ -12,16 +12,12 @@
       perSystem = { self', inputs', pkgs, system, ... }:
         {
           haskellProjects.default = {
-            haskellPackages = pkgs.haskell.packages.ghc924;
-            root = ./.;
             overrides = _: _: { };
-            buildTools = { };
             hlsCheck = false;
             hlintCheck = true;
-
-            packages.default = self'.packages.foo;
-            apps.default = self'.packages.bar;
+            packages = { foo = { root = ./foo; }; bar = { root = ./bar; }; };
           };
+          packages.default = self'.packages.bar;
         };
     };
 }

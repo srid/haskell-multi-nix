@@ -20,27 +20,23 @@
     },
     "haskell-flake": {
       "locked": {
-        "lastModified": 1667145982,
-        "narHash": "sha256-f9DGO5yZLivyJT6DmLB7hqoCFBprhL6kWXwJ3Ea1y9E=",
-        "owner": "HariAmoor-professional",
-        "repo": "haskell-flake",
-        "rev": "9e43811a915e237d1f09502f2b276f2a96f2922b",
-        "type": "github"
+        "lastModified": 1667260294,
+        "narHash": "sha256-VaxbkzQ2HKdlm8KhmXU2peYYUupFLSIzOQ3C/BBMwjQ=",
+        "path": "/home/hariamoor/platonic-systems/haskell-flake",
+        "type": "path"
       },
       "original": {
-        "owner": "HariAmoor-professional",
-        "ref": "issue-7",
-        "repo": "haskell-flake",
-        "type": "github"
+        "path": "/home/hariamoor/platonic-systems/haskell-flake",
+        "type": "path"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1667055375,
-        "narHash": "sha256-xfSTHYxuKRiqF4dcuAFdti1OUvrC2lHpQqCHWUK5/JA=",
+        "lastModified": 1667085676,
+        "narHash": "sha256-jPHYYoSdrV3ypWG4oi9SUeI2MU6dLjxM88+9io5Rrx0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7f9be6a505a31f88499c5d20d11f98accf5ae6ba",
+        "rev": "e6e6bad81b7e11f37d893ef39712ce8918ae2338",
         "type": "github"
       },
       "original": {
