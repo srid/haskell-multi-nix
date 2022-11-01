@@ -37,6 +37,7 @@
             buildInputs = with haskellPackages'; [
               ghcid
               cabal-install
+              haskell-language-server
             ];
           };
         };
