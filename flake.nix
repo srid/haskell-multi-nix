@@ -34,8 +34,9 @@
               p.foo
               p.bar
             ];
-            buildInputs = [
-              haskellPackages'.ghcid
+            buildInputs = with haskellPackages'; [
+              ghcid
+              cabal-install
             ];
           };
         };
