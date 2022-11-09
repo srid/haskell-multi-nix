@@ -27,6 +27,16 @@ To run the executable:
 nix run
 ```
 
+## Dev Shell
+
+The Nix development shell (`nix develop`) allows you to run the various `cabal` commands on the local packages.
+
+For example, this will compile and run the main executable:
+
+```sh
+nix develop -c cabal -- run bar
+```
+
 ## How it works
 
 ### The `nixpkgs` tree
