@@ -11,11 +11,18 @@
       imports = [ haskell-flake.flakeModule ];
       perSystem = { self', inputs', pkgs, system, ... }:
         {
+          # Most simple configuration requires only:
+          # haskellProjects.default = { };
           haskellProjects.default = {
-            overrides = _: _: { };
-            hlsCheck = false;
-            hlintCheck = true;
-            packages = { foo = { root = ./foo; }; bar = { root = ./bar; }; };
+            # Haskell dependency overrides go here 
+            # overrides = self: super: {
+            # };
+            # hlsCheck = false;
+            # hlintCheck = true;
+            packages = {
+              foo.root = ./foo;
+              bar.root = ./bar;
+            };
           };
           packages.default = self'.packages.bar;
         };
