@@ -20,14 +20,18 @@
     },
     "haskell-flake": {
       "locked": {
-        "lastModified": 1667260294,
-        "narHash": "sha256-VaxbkzQ2HKdlm8KhmXU2peYYUupFLSIzOQ3C/BBMwjQ=",
-        "path": "/home/hariamoor/platonic-systems/haskell-flake",
-        "type": "path"
+        "lastModified": 1668024433,
+        "narHash": "sha256-Kf7XY4s9SBfuDjV+m9py+P2lxKS/3dZpxYOfnUa6giY=",
+        "owner": "HariAmoor-professional",
+        "repo": "haskell-flake",
+        "rev": "df5cc6cfd4589a89e68b6819441544875df84158",
+        "type": "github"
       },
       "original": {
-        "path": "/home/hariamoor/platonic-systems/haskell-flake",
-        "type": "path"
+        "owner": "HariAmoor-professional",
+        "ref": "issue-7",
+        "repo": "haskell-flake",
+        "type": "github"
       }
     },
     "nixpkgs": {
