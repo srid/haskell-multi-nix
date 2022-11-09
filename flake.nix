@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    haskell-flake.url = "github:HariAmoor-professional/haskell-flake/issue-7";
+    haskell-flake.url = "github:srid/haskell-flake";
   };
   outputs = { self, nixpkgs, flake-parts, haskell-flake }:
     flake-parts.lib.mkFlake { inherit self; } {
