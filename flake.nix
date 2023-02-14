@@ -4,10 +4,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     haskell-flake.url = "github:srid/haskell-flake";
   };
-  outputs = { self, nixpkgs, flake-parts, haskell-flake }:
-    flake-parts.lib.mkFlake { inherit self; } {
+  outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
-      imports = [ haskell-flake.flakeModule ];
+      imports = [ inputs.haskell-flake.flakeModule ];
       perSystem = { self', inputs', pkgs, system, ... }:
         {
           # Most simple configuration requires only:
