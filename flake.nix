@@ -8,22 +8,12 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       imports = [ inputs.haskell-flake.flakeModule ];
-      perSystem = { self', inputs', pkgs, system, ... }:
-        {
-          # Most simple configuration requires only:
-          # haskellProjects.default = { };
-          haskellProjects.default = {
-            # Haskell dependency overrides go here 
-            # overrides = self: super: {
-            # };
-            # hlsCheck = false;
-            # hlintCheck = true;
-            packages = {
-              foo.root = ./foo;
-              bar.root = ./bar;
-            };
-          };
-          packages.default = self'.packages.bar;
+      perSystem = { self', inputs', pkgs, system, ... }: {
+        haskellProjects.default = {
+          # Want to override dependencies?
+          # See https://haskell.flake.page/dependency
         };
+        packages.default = self'.packages.bar;
+      };
     };
 }
