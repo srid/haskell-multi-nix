@@ -10,6 +10,10 @@
       imports = [ inputs.haskell-flake.flakeModule ];
       perSystem = { self', inputs', pkgs, system, ... }: {
         haskellProjects.default = {
+          packages = {
+            foo.root = ./foo;
+            bar.root = ./bar;
+          };
           # Want to override dependencies?
           # See https://haskell.flake.page/dependency
         };
