@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    haskell-flake.url = "github:srid/haskell-flake";
+    haskell-flake.url = "github:sbh69840/haskell-flake/poc-localapps";
   };
   outputs = inputs@{ self, nixpkgs, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -13,7 +13,7 @@
           # Want to override dependencies?
           # See https://haskell.flake.page/dependency
         };
-        packages.default = self'.packages.bar;
+        apps.default = self'.apps.bar;
       };
     };
 }
