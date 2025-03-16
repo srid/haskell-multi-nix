@@ -37,6 +37,16 @@ For example, this will compile and run the main executable:
 nix develop -c cabal -- run bar
 ```
 
+### ghcid
+
+Using [Multiple Home Units](https://well-typed.com/blog/2022/01/multiple-home-units/) you can use ghcid to auto-recompile and auto-rerun the `bar` program whenever **any** Haskell source changes, including from libraries (`foo`). To do this, you must pass `--enable-multi-repl` along with the list of libraries to reload, which list should be in the correct order. viz.:
+
+```
+ghcid -T Main.main -c 'cabal repl --enable-multi-repl bar foo'
+```
+
+Now, try modifying `./foo/src/Foo.hs` and ghcid should instantly re-compile and re-run `bar` with the new changes. A demo can be seen [here](https://x.com/sridca/status/1901283945779544362).
+
 ## How it works
 
 ### The `nixpkgs` tree
